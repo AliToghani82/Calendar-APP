@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">OurCalendarApp</string>
+    <string name="addEvent">Add Event</string>
+    <string name="dateDefault"> mm/dd/yyyy</string>
+    <string name="events">Events</string>
+    <string name="eventName">Event Name</string>
+    <string name="eventDate">Date</string>
+    <string name="eventTime">Time</string>
+    <string name="eventNotes">Notes</string>
+    <string name="saveEvent">Save Event</string>
+</resources>
