@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">OurCalendarApp</string>
+    <string name="addEvent">Add Event</string>
+    <string name="dateDefault"> mm/dd/yyyy</string>
+    <string name="events">Events</string>
+    <string name="eventName">Event Name</string>
+    <string name="eventDate">Date</string>
+    <string name="eventTime">Time</string>
+    <string name="eventNotes">Notes</string>
+    <string name="saveEvent">Save Event</string>
+    <string name="event_name">Event Name:</string>
+    <string name="put_your_notes_here">Put your notes here</string>
+    <string name="notes">Notes:</string>
+    <string name="date">Date:</string>
+    <string name="end_time">End Time:</string>
+    <string name="todo1">TODO</string>
+    <string name="start_time">Start Time:</string>
+    <string name="all_day">All Day:</string>
+    <string name="enter_location_of_event">Enter location of event</string>
+    <string name="location">Location:</string>
+    <string name="enter_event_name">Enter event name</string>
+    <string name="todo2">TODO</string>
+    <string name="todo3">TODO</string>
+    <string name="select_start_time">Select start time</string>
+    <string name="select_a_date">Select a date</string>
+    <string name="select_end_time">Select end time</string>
+    <string name="edit_btn">Edit</string>
+    <string name="insert_date">insert date</string>
+    <string name="view_events">View Events</string>
+    <string name="new_event">New Event</string>
+    <string name="add_event">Add Event</string>
+</resources>

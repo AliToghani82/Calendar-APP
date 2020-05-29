@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_event_pop"
+    android:outlineProvider="background"
+    tools:context=".EventPopActivity">
+
+
+    <TextView
+        android:id="@+id/tv_event_name"
+        android:layout_width="182dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="16dp"
+        android:text="EVENT NAME"
+        android:textColor="#FFF"
+        android:textSize="23dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.205"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_location"
+        android:layout_width="215dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="8dp"
+        android:text="Location"
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.306"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_event_name" />
+
+    <TextView
+        android:id="@+id/tv_start_to_end"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="4dp"
+        android:text="From time to time"
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.194"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_location" />
+
+    <Button
+        android:id="@+id/btn_edit_event"
+        android:layout_width="64dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="32dp"
+        android:text="Edit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_start_to_end" />
+
+    <Button
+        android:id="@+id/btn_delete_event"
+        android:layout_width="73dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="32dp"
+        android:text="Delete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.257"
+        app:layout_constraintStart_toEndOf="@+id/btn_edit_event"
+        app:layout_constraintTop_toBottomOf="@+id/tv_start_to_end" />
+</androidx.constraintlayout.widget.ConstraintLayout>

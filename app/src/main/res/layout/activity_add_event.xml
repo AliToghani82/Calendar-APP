@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddEventActivity">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="400dp"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/eventNameTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="@android:string/cancel" />
+
+        <TextView
+            android:id="@+id/newEventTextView"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="-40dp"
+            android:gravity="center"
+            android:text="@string/new_event"
+            android:textColor="#FFF"
+            android:textSize="28sp" />
+
+        <Button
+            android:id="@+id/saveEventButton"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="290dp"
+            android:layout_marginLeft="300dp"
+            android:layout_marginTop="-39dp"
+            android:text="@string/add_event" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/eventNameTextView"
+        android:layout_width="140dp"
+        android:layout_height="48dp"
+        android:gravity="bottom|start"
+        android:paddingStart="5dp"
+        android:paddingLeft="5dp"
+        android:text="Event Name"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout" />
+
+    <EditText
+        android:id="@+id/eventNameEditText"
+        android:layout_width="250dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="56dp"
+        android:autofillHints=""
+        android:background="@null"
+        android:ems="10"
+        android:gravity="bottom|start"
+        android:hint="Enter event name"
+        android:inputType="text"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/eventNameTextView"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout" />
+
+    <TextView
+        android:id="@+id/locationTextView"
+        android:layout_width="140dp"
+        android:layout_height="48dp"
+        android:gravity="bottom|start"
+        android:paddingStart="5dp"
+        android:paddingLeft="5dp"
+        android:text="Location"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventNameTextView" />
+
+    <EditText
+        android:id="@+id/locationEditText"
+        android:layout_width="250dp"
+        android:layout_height="48dp"
+        android:autofillHints=""
+        android:background="@null"
+        android:ems="10"
+        android:gravity="bottom|start"
+        android:hint="Enter location of event"
+        android:inputType="text"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/dateSelectedTextView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/locationTextView"
+        app:layout_constraintTop_toBottomOf="@+id/eventNameEditText" />
+
+    <TextView
+        android:id="@+id/allDayTextView"
+        android:layout_width="140sp"
+        android:layout_height="48dp"
+        android:gravity="bottom|start"
+        android:paddingStart="5dp"
+        android:paddingLeft="5dp"
+        android:text= ""
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.003"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateTextView" />
+
+    <Switch
+        android:id="@+id/allDaySwitch"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@+id/allDayTextView"
+        app:layout_constraintTop_toBottomOf="@+id/dateSelectedTextView" />
+
+    <TextView
+        android:id="@+id/startTextView"
+        android:layout_width="140dp"
+        android:layout_height="48dp"
+        android:gravity="bottom|start"
+        android:paddingStart="5dp"
+        android:paddingLeft="5dp"
+        android:text="@string/start_time"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/allDayTextView" />
+
+    <TextView
+        android:id="@+id/startTimeTextView"
+        android:layout_width="190dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="248dp"
+        android:gravity="bottom|start"
+        android:hint="Select start time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/startTextView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/selectStartTimeImageButton"
+        android:layout_width="60dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/bg_timebtn"
+        android:tint="@color/colorAccent"
+        android:contentDescription="@string/todo3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.891"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectDateButton"
+        app:srcCompat="@android:drawable/ic_lock_idle_alarm" />
+
+    <TextView
+        android:id="@+id/endTextView"
+        android:layout_width="140dp"
+        android:layout_height="48dp"
+        android:gravity="bottom|start"
+        android:paddingStart="5dp"
+        android:paddingLeft="5dp"
+        android:text="@string/end_time"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startTextView" />
+
+    <TextView
+        android:id="@+id/endTimeTextView"
+        android:layout_width="190dp"
+        android:layout_height="48dp"
+        android:gravity="bottom|start"
+        android:hint="@string/select_end_time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.011"
+        app:layout_constraintStart_toEndOf="@+id/endTextView"
+        app:layout_constraintTop_toBottomOf="@+id/startTimeTextView" />
+
+    <ImageButton
+        android:id="@+id/selectEndTimeImageButton"
+        android:layout_width="60dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_endtimebtn"
+        android:tint="@color/colorAccent"
+        android:contentDescription="@string/todo2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.891"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectStartTimeImageButton"
+        app:srcCompat="@android:drawable/ic_lock_idle_alarm" />
+
+    <TextView
+        android:id="@+id/dateSelectedTextView"
+        android:layout_width="190dp"
+        android:layout_height="48dp"
+        android:gravity="bottom|start"
+        android:hint="@string/select_a_date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/dateTextView"
+        app:layout_constraintTop_toBottomOf="@+id/locationEditText" />
+
+    <TextView
+        android:id="@+id/dateTextView"
+        android:layout_width="140dp"
+        android:layout_height="48dp"
+        android:gravity="bottom|start"
+        android:paddingStart="5dp"
+        android:paddingLeft="5dp"
+        android:text="@string/date"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/locationTextView" />
+
+    <ImageButton
+        android:id="@+id/selectDateButton"
+        android:layout_width="60dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="168dp"
+        android:background="@drawable/bg_calendarbtn"
+        android:tint="@color/colorAccent"
+        android:contentDescription="@string/todo1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.891"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_agenda" />
+
+    <TextView
+        android:id="@+id/notesTextView"
+        android:layout_width="140dp"
+        android:layout_height="48dp"
+        android:gravity="bottom|start"
+        android:paddingStart="5dp"
+        android:paddingLeft="5dp"
+        android:text="@string/notes"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/endTextView" />
+
+    <EditText
+        android:id="@+id/eventNotesEditText"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:autofillHints=""
+        android:background="@null"
+        android:ems="10"
+        android:gravity="bottom|start"
+        android:hint="@string/notes"
+        android:inputType="text"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/notesTextView"
+        app:layout_constraintTop_toBottomOf="@+id/endTimeTextView" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
