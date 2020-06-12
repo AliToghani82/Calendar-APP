@@ -1,3 +1,19 @@
+/* Program: OurCalendarApp
+ *
+ * Members: Natalie Haass, Ali Toghani, Jerod Hollen
+ *
+ * Class Description: The MyDayActivity displays the date user clicked and that particular day's events
+ * in chronological order.
+ *
+ * Functionality: We implemented a priority queue (Min Heap) to sort the event objects by time after
+ * they are retrieved from the SQL database. The return list then adds the deleted minimum from the
+ * priority queue to ensure the earliest time is displayed first. All day events are shown before
+ * events with times. User can also choose to add an event from this page, doing so launches the AddEventActivity.
+ *
+ */
+
+
+
 package com.example.ourcalendarapp;
 
 import android.content.ContentValues;
@@ -21,6 +37,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,11 +49,11 @@ public class MyDayActivity extends AppCompatActivity {
     //private static final String TAG = "MyDayActivity";
     public String clickedDate;
     private int clickedDateInt;
-    private Button btn_viewEvent;
     private ListView lv_viewEvents;
+    private SwipeRefreshLayout mySwipeRefreshLayout;
 
     ArrayAdapter eventArrayAdapter;
-    DatabaseHelper databaseHelper;
+    DatabaseHelper databaseHelper = new DatabaseHelper(this);
     TextView myDateTextView;
 
 
@@ -56,26 +73,21 @@ public class MyDayActivity extends AppCompatActivity {
         myDateTextView.setText(clickedDate); // Set text view to the date
 
 
-        // Find our button and listview
-        btn_viewEvent = findViewById(R.id.btn_viewEvents);
-        lv_viewEvents = findViewById(R.id.lv_viewEvents);
+        // Find our swipe layout and listview
+        mySwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_2);
+        lv_viewEvents = (ListView) findViewById(R.id.lv_viewEvents);
 
         // Display the events in list view
-        databaseHelper = new DatabaseHelper(getApplicationContext());
         showEventOnListAdapter(databaseHelper);
 
-        btn_viewEvent.setOnClickListener(new View.OnClickListener() {
+        // On swipe listener for the layout
+         mySwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
-            public void onClick(View v) {
-
-                // Display new events when viewEvents is clicked
-                DatabaseHelper databaseHelper = new DatabaseHelper(getApplicationContext());
-
-                showEventOnListAdapter(databaseHelper);
-                //Toast.makeText(getApplicationContext(), events.toString(), Toast.LENGTH_SHORT).show();
+            public void onRefresh() {
                 showEventOnListAdapter(databaseHelper);
             }
-        });
+         });
+
 
         // This allows the user to delete an event by clicking it
         lv_viewEvents.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -89,15 +101,11 @@ public class MyDayActivity extends AppCompatActivity {
 
                 // Put the event into the intent
                 i.putExtra("clickedEvent", clickedEvent);
+                i.putExtra("date", clickedDateInt+"");
                 startActivity(i);
-
-                //DatabaseHelper databaseHelper = new DatabaseHelper(getApplicationContext());
-                /*databaseHelper.deleteOne(clickedEvent);
-                showEventOnListAdapter(databaseHelper);*/
+                showEventOnListAdapter(databaseHelper);
             }
         });
-
-
 
 
         // Start Add Event Activity when addEventBtn is clicked
@@ -108,13 +116,15 @@ public class MyDayActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent child = new Intent(getApplicationContext(), AddEventActivity.class);
                 startActivity(child);
+                showEventOnListAdapter(databaseHelper);
             }
         });
     }
 
-    private void showEventOnListAdapter(DatabaseHelper databaseHelper) {
+    public void showEventOnListAdapter(DatabaseHelper databaseHelper) {
         eventArrayAdapter = new ArrayAdapter<Event>(getApplicationContext(), android.R.layout.simple_list_item_1, databaseHelper.getEvents(clickedDateInt));
         lv_viewEvents.setAdapter(eventArrayAdapter);
+        mySwipeRefreshLayout.setRefreshing(false);
     }
 
     private int parseDate(String date){
@@ -131,27 +141,26 @@ public class MyDayActivity extends AppCompatActivity {
     }
 
     private int concateIntegers(int day, int month, int year){
+        String dayString =Integer.toString(day);
+        if ( day < 10) {
+           dayString = "0"+ dayString;
+        }
 
-        String dayString = Integer.toString(day);
         String monthString = Integer.toString(month);
+        if ( month < 10) {
+            monthString = "0"+ monthString;
+        }
+
         String yearString = Integer.toString(year);
-
         String date = monthString + dayString + yearString;
-
         int dateInt = Integer.parseInt(date);
-
         return dateInt;
 
     }
 
 
 
-    /*private void setUpRecyclerView(List<Event> events) {
-        RecyclerView recyclerView = findViewById(R.id.eventRecyclerView);
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(getApplicationContext(), events);
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-    } */
+
 
 
 

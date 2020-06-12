@@ -19,56 +19,81 @@
         android:textSize="23dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.205"
+        app:layout_constraintHorizontal_bias="0.069"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_location"
-        android:layout_width="215dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="231dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="4dp"
         android:text="Location"
         android:textColor="@color/colorAccent"
         android:textSize="18sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.306"
+        app:layout_constraintHorizontal_bias="0.261"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_event_name" />
 
     <TextView
         android:id="@+id/tv_start_to_end"
-        android:layout_width="180dp"
-        android:layout_height="40dp"
+        android:layout_width="203dp"
+        android:layout_height="27dp"
         android:layout_marginTop="4dp"
-        android:text="From time to time"
+        android:text="Notes"
         android:textColor="@color/colorAccent"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.194"
+        app:layout_constraintHorizontal_bias="0.076"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_location" />
 
     <Button
-        android:id="@+id/btn_edit_event"
-        android:layout_width="64dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="32dp"
-        android:text="Edit"
+        android:id="@+id/btn_delete_event"
+        android:layout_width="100dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="8dp"
+        android:text="Delete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.256"
+        app:layout_constraintStart_toEndOf="@+id/cancel"
+        app:layout_constraintTop_toBottomOf="@+id/alarm" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="100dp"
+        android:layout_height="32dp"
+        android:text="Time"
+        android:textColor="#FF9800"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.414"
+        app:layout_constraintStart_toEndOf="@+id/tv_event_name"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <TextView
+        android:id="@+id/alarm"
+        android:layout_width="250dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="4dp"
+        android:text="Alarm Set"
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.099"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_start_to_end" />
 
     <Button
-        android:id="@+id/btn_delete_event"
-        android:layout_width="73dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="32dp"
-        android:text="Delete"
+        android:id="@+id/cancel"
+        android:layout_width="100dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="8dp"
+        android:text="Cancel Alarm"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.257"
-        app:layout_constraintStart_toEndOf="@+id/btn_edit_event"
-        app:layout_constraintTop_toBottomOf="@+id/tv_start_to_end" />
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/alarm" />
 </androidx.constraintlayout.widget.ConstraintLayout>

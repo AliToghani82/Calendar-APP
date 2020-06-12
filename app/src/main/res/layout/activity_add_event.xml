@@ -124,7 +124,7 @@
         android:gravity="bottom|start"
         android:paddingStart="5dp"
         android:paddingLeft="5dp"
-        android:text= ""
+        android:text= "@string/all_day"
         android:textColor="@android:color/black"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -171,6 +171,20 @@
         app:layout_constraintStart_toEndOf="@+id/startTextView"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/setAlarmTextView"
+        android:layout_width="190dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="4dp"
+        android:gravity="bottom|start"
+        android:hint="Set Alarm"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/startTextView"
+        app:layout_constraintTop_toBottomOf="@+id/endTimeTextView" />
+
     <ImageButton
         android:id="@+id/selectStartTimeImageButton"
         android:layout_width="60dp"
@@ -186,7 +200,23 @@
         app:srcCompat="@android:drawable/ic_lock_idle_alarm" />
 
     <TextView
-        android:id="@+id/endTextView"
+        android:id="@+id/setAlarm"
+        android:layout_width="140dp"
+        android:layout_height="48dp"
+        android:gravity="bottom|start"
+        android:paddingStart="5dp"
+        android:paddingLeft="5dp"
+        android:text="Set Alarm"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.003"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/endTextView2" />
+
+    <TextView
+        android:id="@+id/endTextView2"
         android:layout_width="140dp"
         android:layout_height="48dp"
         android:gravity="bottom|start"
@@ -209,17 +239,31 @@
         android:hint="@string/select_end_time"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.011"
-        app:layout_constraintStart_toEndOf="@+id/endTextView"
+        app:layout_constraintStart_toEndOf="@+id/setAlarm"
         app:layout_constraintTop_toBottomOf="@+id/startTimeTextView" />
 
     <ImageButton
-        android:id="@+id/selectEndTimeImageButton"
+        android:id="@+id/SetAlarmButton"
         android:layout_width="60dp"
         android:layout_height="48dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="56dp"
         android:background="@drawable/bg_endtimebtn"
-        android:tint="@color/colorAccent"
         android:contentDescription="@string/todo2"
+        android:tint="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.891"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectStartTimeImageButton"
+        app:srcCompat="@android:drawable/ic_popup_reminder" />
+
+    <ImageButton
+        android:id="@+id/selectEndTimeImageButton2"
+        android:layout_width="60dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/bg_endtimebtn"
+        android:contentDescription="@string/todo2"
+        android:tint="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.891"
         app:layout_constraintStart_toStartOf="parent"
@@ -279,7 +323,7 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/endTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/setAlarm" />
 
     <EditText
         android:id="@+id/eventNotesEditText"
@@ -296,7 +340,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/notesTextView"
-        app:layout_constraintTop_toBottomOf="@+id/endTimeTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/setAlarmTextView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

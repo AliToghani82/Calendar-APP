@@ -29,4 +29,6 @@
     <string name="view_events">View Events</string>
     <string name="new_event">New Event</string>
     <string name="add_event">Add Event</string>
+    <string name="search_my_events">Search My Events</string>
+    <string name="refresh">Refresh</string>
 </resources>

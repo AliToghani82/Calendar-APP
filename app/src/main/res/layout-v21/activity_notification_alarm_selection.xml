@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NotificationPopTime">
+
+    <Button
+        android:id="@+id/tenMin"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="10 min before"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fiveMin" />
+
+    <Button
+        android:id="@+id/oneMin"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="1 Min before"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventTime" />
+
+    <Button
+        android:id="@+id/noneDay"
+        android:layout_width="170dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="28dp"
+        android:text="None"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <Button
+        android:id="@+id/eventTime"
+        android:layout_width="170dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="4dp"
+        android:text="At the time Event"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/noneDay" />
+
+    <Button
+        android:id="@+id/fiveMin"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="5 min before"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/oneMin" />
+
+    <Button
+        android:id="@+id/fifteenMin"
+        android:layout_width="170dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="4dp"
+        android:text="15 min before"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tenMin" />
+
+    <Button
+        android:id="@+id/thirtyMin"
+        android:layout_width="170dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="4dp"
+        android:text="30 min before"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fifteenMin" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:text="CHOOSE AN ALARM"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/oneHour"
+        android:layout_width="170dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="4dp"
+        android:text="1 hour before"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/thirtyMin" />
+
+    <Button
+        android:id="@+id/oneDay"
+        android:layout_width="170dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="4dp"
+        android:text="1 day before"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/oneHour" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
