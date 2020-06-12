@@ -131,9 +131,6 @@ public class EventPopActivity extends AppCompatActivity {
             year = Integer.parseInt(date.substring(4,8));
         }
 
-
-
-
         Calendar c = Calendar.getInstance();
         if(u) {
             startTime = "09:00 AM";

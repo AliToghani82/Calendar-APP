@@ -58,7 +58,7 @@ public class BinaryHeap<Event extends Comparable<? super Event>> {
     }
 
 
-    //
+    //makes the array larger in size.
     private void enlargeArray(int newSize) {
         Event[] old = array;
         array = (Event[]) new Comparable[newSize];
@@ -98,7 +98,6 @@ public class BinaryHeap<Event extends Comparable<? super Event>> {
 
     // Check if queue is empty
     // returns true if queue is empty
-
     public boolean isEmpty() {
         return currentSize == 0;
     }
@@ -112,7 +111,6 @@ public class BinaryHeap<Event extends Comparable<? super Event>> {
 
     // Percolate down
     // This function takes in an integer, hole, and uses it to determine where the new event should go according to heap property
-
     private void percolateDown(int hole) {
         int child;
         Event tmp = array[hole];
@@ -129,7 +127,4 @@ public class BinaryHeap<Event extends Comparable<? super Event>> {
         }
         array[hole] = tmp;
     }
-
-
-
 }

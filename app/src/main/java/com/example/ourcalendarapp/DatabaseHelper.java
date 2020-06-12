@@ -65,7 +65,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // This method adds and event to the database
     // Parameters: Event Object
     // Returns: Boolean; True if insert successfull
-
     public boolean addOne(Event event) {
 
         // Get a writable database
@@ -267,7 +266,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 return newEvent;
 
         }
-
 
     }
 

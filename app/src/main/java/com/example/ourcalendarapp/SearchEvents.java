@@ -46,7 +46,7 @@ public class SearchEvents extends AppCompatActivity {
 
 
 
-
+    // fully creates a functional searching event from all the events in the database.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,6 +90,7 @@ public class SearchEvents extends AppCompatActivity {
 
     }
 
+    // It creates the menu for the search Event.
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -114,6 +115,7 @@ public class SearchEvents extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+    // Shows all the events in a list.
     private void showEventOnListAdapter(DatabaseHelper databaseHelper) {
         adapter = new ArrayAdapter<Event>(getApplicationContext(), android.R.layout.simple_list_item_1, databaseHelper.getAllEvents());
         search_events.setAdapter(adapter);

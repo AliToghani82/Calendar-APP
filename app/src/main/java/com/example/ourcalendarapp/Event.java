@@ -12,11 +12,12 @@ public class Event implements Comparable<Event>, Comparator<Event>, Parcelable {
     private String event, location, startTime, endTime, notes;
     private Boolean allDay, dailyRepeat, weeklyRepeat, monthlyRepeat, yearlyRepeat;
 
-
+    // an empty constructor.
     public Event() {
 
     }
 
+    //Constrcutor for the class if the given Event is null
     public Event(int id, String eventName){
         this.id = id;
         this.event = eventName;
@@ -31,6 +32,7 @@ public class Event implements Comparable<Event>, Comparator<Event>, Parcelable {
 
     }
 
+    //Constructor for class which intializes the given inputs such as event name, startTime, endTime
     public Event(int id,String event, String location, int date, String startTime, String endTime, String notes, Boolean allDay, int bigId, int alarm) {
         this.id = id;
         this.event = event;
@@ -44,6 +46,7 @@ public class Event implements Comparable<Event>, Comparator<Event>, Parcelable {
         this.alarm = alarm;
     }
 
+    // intilizes the parcable interface.
     protected Event(Parcel in) {
         id = in.readInt();
         date = in.readInt();
@@ -58,6 +61,7 @@ public class Event implements Comparable<Event>, Comparator<Event>, Parcelable {
         alarm = in.readInt();
     }
 
+    //creates the events using parables.
     public static final Creator<Event> CREATOR = new Creator<Event>() {
         @Override
         public Event createFromParcel(Parcel in) {
@@ -70,6 +74,7 @@ public class Event implements Comparable<Event>, Comparator<Event>, Parcelable {
         }
     };
 
+    //Returns the toString of this event name which is the event name and starting time to end time.
     public String toString() {
 
         if(!allDay){
@@ -77,9 +82,10 @@ public class Event implements Comparable<Event>, Comparator<Event>, Parcelable {
         } else {
             return event + ": All Day";
         }
-
     }
 
+    // Checks to see if it has the main components to create an event, if one is missing it would return false.
+    // otherWise returns true if it is not missing any.
     public boolean hasKeyComponents(){
 
         // Event is valid if it has an event name date
@@ -89,6 +95,7 @@ public class Event implements Comparable<Event>, Comparator<Event>, Parcelable {
         return true;
     }
 
+    // checks to see if the ending time is after starting time or not.
     public boolean validateTimes() {
         if (!allDay) {
         // Convert the time strings to ints
@@ -99,79 +106,96 @@ public class Event implements Comparable<Event>, Comparator<Event>, Parcelable {
                 return false;
             }
         }
-
         return true;
     }
 
+    // returns the event id
     public int getId(){ return id; }
 
+    // sets the event id by taking an id
     public void setId(int id){ this.id = id; }
 
+    // returns the eventName
     public String getEvent() { return event; }
 
+    // sets the event name by taking an event name
     public void setEvent(String event) {
         this.event = event;
     }
 
+    // returns the location of the event.
     public String getLocation(){
         return location;
     }
 
+    // sets the location of the event by taking a location
     public void setLocation(String location){
         this.location = location;
     }
 
+    // returns the date of event.
     public int getDate(){
         return date;
     }
 
+    // sets the date of the event by taking a date
     public void setDate(int date){
         this.date = date;
     }
 
+    // returns the startTime of the event
     public String getStartTime() {
         return startTime;
     }
 
+    // sets the startTime of the event by taking a startTime
     public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
 
+    // returns the end time of the event
     public String getEndTime() {
         return endTime;
     }
 
+    // sets the end time of the event by taking an end time
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
 
-
+    // returns the notes of the event
     public String getNotes() {
         return notes;
     }
 
+    // sets the notes of the event by taking notes
     public void setNotes(String notes) {
         this.notes = notes;
     }
 
+    // returns a boolean for all day;
     public Boolean getAllDay() {
         return allDay;
     }
 
+    // sets the boolean for all day by taking a boolean
     public void setAllDay(Boolean allDay) {
         this.allDay = allDay;
     }
 
+    // returns the big Id
     public int getBigId () { return bigId; }
 
+    // sets the big id by taking a big id
     public void setBigId (int bigId) { this.bigId = bigId; }
 
+    // returns the number of the alarm
     public int getAlarm () { return alarm; }
 
+    // sets the alarm number to given number
     public void setAlarm (int alarm) { this.alarm = alarm; }
 
-
-
+    // Compares 2 events together
     @Override
     public int compare(Event o1, Event o2) {
         char[] event1 = o1.getEvent().toCharArray();
@@ -214,7 +238,7 @@ public class Event implements Comparable<Event>, Comparator<Event>, Parcelable {
 
     }
 
-
+    // compares the current event to the given event that is in parameter
     @Override
     public int compareTo(Event e) {
 
@@ -245,12 +269,10 @@ public class Event implements Comparable<Event>, Comparator<Event>, Parcelable {
             else {
                 return 0;
             }
-
         }
-
     }
 
-
+    // It parses time frm the timeString that is inputed and returns and Int of the time in 24 hour format
     private int parseTime(String timeString){
 
         if(timeString != null) {
@@ -269,11 +291,13 @@ public class Event implements Comparable<Event>, Comparator<Event>, Parcelable {
         }
     }
 
+    // it describes the contents of the event.
     @Override
     public int describeContents() {
         return 0;
     }
 
+    // Writing the parcable interface.
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(id);

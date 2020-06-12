@@ -121,12 +121,14 @@ public class MyDayActivity extends AppCompatActivity {
         });
     }
 
+    // It shows all the events in the current day by taking them from the database in an array format
     public void showEventOnListAdapter(DatabaseHelper databaseHelper) {
         eventArrayAdapter = new ArrayAdapter<Event>(getApplicationContext(), android.R.layout.simple_list_item_1, databaseHelper.getEvents(clickedDateInt));
         lv_viewEvents.setAdapter(eventArrayAdapter);
         mySwipeRefreshLayout.setRefreshing(false);
     }
 
+    // it parses the date given from the calendar to match the date in the database, returns an Integer of the time combined
     private int parseDate(String date){
         String[] parseDate = date.split("/");
 
@@ -135,11 +137,10 @@ public class MyDayActivity extends AppCompatActivity {
         int year = Integer.parseInt(parseDate[2]);
 
         return concateIntegers(day, month, year);
-
-
-
     }
 
+    // Makes sure the format is right regarding the date or month that is inputed
+    // to be MM-DD-YYYY. returns an integer of the date.
     private int concateIntegers(int day, int month, int year){
         String dayString =Integer.toString(day);
         if ( day < 10) {
@@ -150,7 +151,6 @@ public class MyDayActivity extends AppCompatActivity {
         if ( month < 10) {
             monthString = "0"+ monthString;
         }
-
         String yearString = Integer.toString(year);
         String date = monthString + dayString + yearString;
         int dateInt = Integer.parseInt(date);

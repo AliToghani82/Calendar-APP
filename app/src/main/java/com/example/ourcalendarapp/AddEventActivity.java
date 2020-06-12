@@ -229,6 +229,8 @@ public class AddEventActivity extends AppCompatActivity implements View.OnClickL
         }
     }
 
+    // it checks if the inputed time has already passed, so it wont set notification if it has.
+    // takes in a long time which is time in milies. returns a boolean true if it is after, and false if before.
     private boolean checkTime (Long time) {
         Calendar r = Calendar.getInstance();
         Long timeNow = r.getTimeInMillis();
@@ -237,44 +239,7 @@ public class AddEventActivity extends AppCompatActivity implements View.OnClickL
         } else {
             return true;
         }
-//        SimpleDateFormat dateformat = new SimpleDateFormat("MM-dd-yyyy HH:mm:ss");
-//        String datetime = dateformat.format(r.getTime());
-//        int dayS = Integer.parseInt(datetime.substring(0,2));
-//        int monthS = Integer.parseInt(datetime.substring(3,5));
-//        int yearS = Integer.parseInt(datetime.substring(6,10));
-//        int hourS = Integer.parseInt(datetime.substring(11,13));
-//        int minS = Integer.parseInt(datetime.substring(14,16));
-//        int check = 0;
-//        if ( c.get(Calendar.YEAR) >= yearS) {
-//            if ( c.get(Calendar.MONTH) >= monthS) {
-//                if ( c.get(Calendar.DAY_OF_MONTH) >= dayS) {
-//                    if ( c.get(Calendar.HOUR_OF_DAY) >= hourS) {
-//                        if ( c.get(Calendar.MINUTE) >= minS) {
-//                            return true;
-//                        } else {
-//                            return false;
-//                        }
-//                    } else {
-//                        return false;
-//                    }
-//                } else {
-//                    return false;
-//                }
-//            }  else {
-//                return false;
-//            }
-//        } else {
-//            return false;
-//        }
-
-
-
     }
-
-
-
-
-
 
     // creates the Notification in the channel based on events id and time.
     private void setTime(Long time) {
@@ -302,7 +267,6 @@ public class AddEventActivity extends AppCompatActivity implements View.OnClickL
     // This method displays the date selection widget and sets the selectedDateTextView equal to what user inputed
     @RequiresApi(api = Build.VERSION_CODES.N)
     private void handleSelectButton() {
-
         calendar = Calendar.getInstance();
 
         int mYear = calendar.get(Calendar.YEAR);
@@ -313,7 +277,6 @@ public class AddEventActivity extends AppCompatActivity implements View.OnClickL
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 month += 1; // Calendar class indexes months starting at 0, increment by 1 to get the actual month
-
                 mMonth1 = month;
                 mDay1 = dayOfMonth;
                 mYear1 = year;
@@ -325,13 +288,10 @@ public class AddEventActivity extends AppCompatActivity implements View.OnClickL
                 }
                 String date1 = monthString + dayOfMonthString + yearString; // Concate the integers
                 selectedDate = Integer.parseInt(date1); // Create an integer out of the concated integers
-
                 String date2 = month + "/" + dayOfMonth + "/" + year;
-
                 selectedDateTextView.setText(date2);
             }
         }, mYear, mMonth, mDay);
-
         datePickerDialog.show();
     }
 
@@ -433,9 +393,6 @@ public class AddEventActivity extends AppCompatActivity implements View.OnClickL
             }
         }
     }
-
-
-
 
 }
 
